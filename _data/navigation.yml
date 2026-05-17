@@ -18,20 +18,22 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Team"
+    url: /Team/
+
   - title: "Techniques"
     url: /techniques/
 
   - title: "Resources"
     url: /resources/
 
-  - title: "Team"
-    url: /Team/
+  - title: "Sensor Database"
+    url: /sensor/
+
 
   - title: "Contact"
     url: /contact/
 
-  #- title: "Sensor Database"
-  #  url: /sensor/
 
   #- title: "Lab"
   #  url: /lab/

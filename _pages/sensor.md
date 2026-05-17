@@ -44,7 +44,7 @@ author_profile: false
 <div class="wide-wrapper">
     <div class="embed-container">
         <iframe 
-            src="https://autosensorbase.streamlit.app/?embed=true&theme=light" 
+            src="https://sensor.cns.ac.cn" 
             frameborder="0" 
             allowfullscreen>
         </iframe>
