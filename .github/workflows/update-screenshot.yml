@@ -1,0 +1,35 @@
+name: Auto Update Sensor Base Screenshot
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # 每周日凌晨 0 点运行 (可根据需求调整)
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update-screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Capture screenshot
+        run: python capture.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/images/sensor-preview.png
+          # 如果图片没有变化，commit 会报错，所以加上 || exit 0
+          git commit -m "chore: auto update sensor base screenshot" || exit 0
+          git push
