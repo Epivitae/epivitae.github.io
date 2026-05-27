@@ -5,57 +5,42 @@
   </div>
 </div>
 
-<script data-cfasync="false">
-  console.log("🌍 脚本开始执行！(绕过所有拦截机制)");
-  
-  // 2. 移除所有 DOMContentLoaded 和 setTimeout 等待逻辑。
-  // 因为脚本物理位置就在 canvas 下方，浏览器解析到这里时，canvas 必然已经存在。直接执行！
+<script id="globe-data" type="application/json">
+  {{ site.data.locations | jsonify | default: "[]" }}
+</script>
+
+<script>
+  console.log("🌍 准备动态注入 3D 地球引擎...");
   (function() {
     var canvas = document.getElementById("cobe-globe");
-    if (!canvas) {
-      console.error("❌ 找不到 canvas 元素，请检查 HTML 结构！");
-      return;
-    }
+    if (!canvas) return;
 
-    // 3. 读取 Jekyll 注入的数据 (采用最兼容的 ES5 语法以防线上代码被意外压缩破坏)
-    var rawData = {{ site.data.locations | jsonify | default: "[]" }};
-    var markersData = [];
-    if (Array.isArray(rawData)) {
-      markersData = rawData.map(function(item) {
-        return { location: [item.lat, item.lng], size: item.size || 0.05 };
-      });
-    }
+    // 创建一个新的 Module 脚本
+    var moduleScript = document.createElement("script");
+    moduleScript.type = "module";
     
-    console.log("📍 成功解析数据：", markersData);
+    // 将核心逻辑以“字符串拼接”的形式写入，Cloudflare 会把它当作普通文本，直接放行
+    moduleScript.textContent = [
+      "import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';",
+      "try {",
+      "  const dataEl = document.getElementById('globe-data');",
+      "  const rawData = JSON.parse(dataEl.textContent || '[]');",
+      "  const markers = rawData.map(item => ({ location: [item.lat, item.lng], size: item.size || 0.05 }));",
+      "  const canvas = document.getElementById('cobe-globe');",
+      "  let phi = 0;",
+      "  createGlobe(canvas, {",
+      "    devicePixelRatio: 2, width: 1000, height: 1000, phi: 0, theta: 0, dark: 0,",
+      "    diffuse: 1.2, mapSamples: 16000, mapBrightness: 6, baseColor: [1, 1, 1],",
+      "    markerColor: [0.1, 0.5, 1], glowColor: [1, 1, 1], markers: markers,",
+      "    onRender: (state) => { state.phi = phi; phi += 0.005; }",
+      "  });",
+      "  console.log('✅ 3D 地球模块成功加载并渲染！');",
+      "} catch(err) {",
+      "  console.error('❌ 渲染失败:', err);",
+      "}"
+    ].join("\n");
 
-    // 4. 原生动态引入 Cobe 并渲染
-    import('https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm')
-      .then(function(module) {
-        var createGlobe = module.default;
-        var phi = 0;
-        createGlobe(canvas, {
-          devicePixelRatio: 2, 
-          width: 1000, 
-          height: 1000, 
-          phi: 0, 
-          theta: 0, 
-          dark: 0,
-          diffuse: 1.2, 
-          mapSamples: 16000, 
-          mapBrightness: 6, 
-          baseColor: [1, 1, 1],       
-          markerColor: [0.1, 0.5, 1], 
-          glowColor: [1, 1, 1], 
-          markers: markersData,
-          onRender: function(state) { 
-            state.phi = phi; 
-            phi += 0.005; 
-          }
-        });
-        console.log("✅ 云端 3D 地球渲染彻底成功！");
-      })
-      .catch(function(error) {
-        console.error("❌ Cobe 库网络加载失败:", error);
-      });
+    // 强行塞入网页执行
+    document.body.appendChild(moduleScript);
   })();
 </script>
