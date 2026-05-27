@@ -237,9 +237,12 @@ author_profile: false
     <a href="#protocols">📋 Protocols</a>
   </nav>
 
-  <iframe src="/assets/globe.html" style="width: 100%; max-width: 500px; aspect-ratio: 1 / 1; display: block; margin: 2rem auto; border: none;" scrolling="no"></iframe>
+  <div style="position: relative; width: 100%; max-width: 500px; margin: 2rem auto;">
+    <div style="width: 100%; padding-bottom: 100%;"></div>
+    <iframe src="/assets/globe.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+  </div>
 
-  
+
   <div class="section-spacer"></div>
   <h2 id="plasmids">Expression vector maps for biosensors</h2>
 
