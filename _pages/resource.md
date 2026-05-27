@@ -237,9 +237,10 @@ author_profile: false
     <a href="#protocols">📋 Protocols</a>
   </nav>
 
-  <a href="https://www.cns.ac.cn/assets/globe.html" target="_blank">
-    <iframe src="/assets/globe.html" style="width: 100%; max-width: 600px; aspect-ratio: 1 / 1; display: block; margin: 2rem auto; border: none;" scrolling="no"></iframe>
-  </a>
+  <div style="position: relative; width: 100%; max-width: 600px; aspect-ratio: 1 / 1; margin: 2rem auto;">
+    <iframe src="/assets/globe.html" style="width: 100%; height: 100%; border: none; display: block;" scrolling="no"></iframe>
+    <a href="https://www.cns.ac.cn/assets/globe.html" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></a>
+  </div>
 
 
   <div class="section-spacer"></div>
