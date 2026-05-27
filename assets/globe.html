@@ -3,28 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: transparent; }
-    .globe-container { position: relative; width: 100%; height: 100%; }
-    canvas { width: 100%; height: 100%; }
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      width: 100%; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: transparent; 
+    }
+    .globe-container { 
+      position: relative; 
+      width: 100%; 
+      height: 100%; 
+    }
+    canvas { 
+      width: 100%; 
+      height: 100%; 
+      display: block; 
+      object-fit: contain; /* 这行极其关键，保证地球永远是正圆，不被挤压 */
+    }
     .label {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 14px;
-      color: #666;
-      font-style: italic;
-      background-color: rgba(255,255,255,0.8);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-family: sans-serif;
-      display: flex;
-      align-items: center;
+      position: absolute; 
+      bottom: 10px; 
+      right: 10px; 
+      font-size: 14px; 
+      color: #666; 
+      font-style: italic; 
+      background-color: rgba(255,255,255,0.8); 
+      padding: 4px 8px; 
+      border-radius: 4px; 
+      font-family: sans-serif; 
+      display: flex; 
+      align-items: center; 
       gap: 6px;
     }
     .blue-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+      width: 8px; 
+      height: 8px; 
+      border-radius: 50%; 
       background-color: rgb(26, 128, 255);
     }
   </style>
