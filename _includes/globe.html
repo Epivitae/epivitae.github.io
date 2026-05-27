@@ -4,7 +4,8 @@
 
 <script type="module">
   // 换用 skypack 的 CDN，兼容性更好
-  import createGlobe from 'https://cdn.skypack.dev/cobe';
+  // 删掉之前的 esm.sh 或 skypack 链接，换成 jsdelivr
+    import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
 
   // 确保在整个页面 DOM 加载完毕后再执行，防止找不到 canvas
   document.addEventListener("DOMContentLoaded", () => {
