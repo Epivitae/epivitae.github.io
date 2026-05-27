@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <style>
+    /* 1. 铺满全屏，没有任何多余限制 */
     body, html { 
       margin: 0; 
       padding: 0; 
@@ -11,17 +12,22 @@
       overflow: hidden; 
       background-color: transparent; 
     }
+    /* 2. 容器使用 Flexbox 居中，哪怕外层变形，它也能稳住内部 */
     .globe-container { 
-      position: relative; 
       width: 100%; 
       height: 100%; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
+    /* 3. 画布保持完美比例，object-fit 确保永远是完整的圆 */
     canvas { 
       width: 100%; 
       height: 100%; 
-      display: block; 
-      object-fit: contain; /* 这行极其关键，保证地球永远是正圆，不被挤压 */
+      object-fit: contain; 
     }
+    /* 标签样式不变 */
     .label {
       position: absolute; 
       bottom: 10px; 
