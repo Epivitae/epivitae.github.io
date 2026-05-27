@@ -6,19 +6,37 @@
     body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: transparent; }
     .globe-container { position: relative; width: 100%; max-width: 500px; height: 500px; margin: 0 auto; }
     canvas { width: 100%; height: 100%; }
-    .label { position: absolute; bottom: 10px; right: 10px; font-size: 14px; color: #666; font-style: italic; background-color: rgba(255,255,255,0.8); padding: 4px 8px; border-radius: 4px; font-family: sans-serif; }
+    .label {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+      background-color: rgba(255,255,255,0.8);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .blue-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgb(26, 128, 255);
+    }
   </style>
 </head>
 <body>
   <div class="globe-container">
     <canvas id="cobe-globe" width="1000" height="1000"></canvas>
-    <div class="label">📍 Our collaborators</div>
+    <div class="label"><span class="blue-dot"></span>Our collaborators</div>
   </div>
 
   <script type="module">
     import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
-    
-    // 以后如果要加新地点，直接在这个数组里加即可
     const markers = [
       { name: "Shanghai (ION)", lat: 31.2304, lng: 121.4737, size: 0.1 },
       { name: "Seattle (UW)", lat: 47.6062, lng: -122.3321, size: 0.08 },
@@ -31,10 +49,7 @@
       { name: "Medical University of Graz", lat: 47.0804, lng: 15.4695, size: 0.08 },
       { name: "SUSTech", lat: 22.5333, lng: 113.9292, size: 0.08 }
     ];
-
-    // 将经纬度转换为 Cobe 需要的格式
     const cobeMarkers = markers.map(item => ({ location: [item.lat, item.lng], size: item.size }));
-
     let phi = 0;
     createGlobe(document.getElementById("cobe-globe"), {
       devicePixelRatio: 2, width: 1000, height: 1000, phi: 0, theta: 0, dark: 0,
