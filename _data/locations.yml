@@ -14,17 +14,28 @@
   lng: 113.3574
   size: 0.05
 
-- name: "Xiangya Hospital (湘雅医院)"
+- name: "Xiangya Hospital"
   lat: 28.2117
   lng: 112.9836
   size: 0.05
 
-- name: "Westlake University (西湖大学)"
+- name: "Westlake University"
   lat: 30.3183
   lng: 120.0811
   size: 0.05
 
-- name: "Peking University (北京大学)"
+- name: "Peking University"
   lat: 39.9919
   lng: 116.3068
   size: 0.05
+
+- name: "Prince of Wales Hospital the Chinese University of Hong Kong"
+  lat: 22.379500157331787
+  lng: 114.20050316423807
+  size: 0.08
+
+- name: "Janelia Research Campus"
+  lat: 39.0720411848608
+  lng: -77.46435630420702
+  size: 0.08
+
