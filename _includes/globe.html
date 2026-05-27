@@ -5,62 +5,65 @@
   </div>
 </div>
 
-<script type="module">
-  import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
-
-  // 1. 将渲染逻辑封装成一个独立的函数
-  function renderGlobe() {
+<script>
+  function initGlobe() {
     console.log("🌍 开始尝试渲染 3D 地球...");
-    
     const canvas = document.getElementById("cobe-globe");
+    
     if (!canvas) {
-      console.error("❌ 找不到 Canvas 容器！可能是页面被卸载。");
+      console.error("❌ 找不到 Canvas 容器！");
       return;
     }
 
-    try {
-      // 2. 利用 Jekyll 的 jsonify 直接输出 JS 对象，最安全的写法
-      const rawData = {{ site.data.locations | jsonify | default: "[]" }};
-      console.log("📍 从服务器读取到的数据：", rawData);
+    // 使用原生的动态 import() 加载 Cobe，这样就不需要 script 标签带 module 属性了
+    import('https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm')
+      .then(({ default: createGlobe }) => {
+        try {
+          // 利用 Jekyll 直接注入数据
+          const rawData = {{ site.data.locations | jsonify | default: "[]" }};
+          console.log("📍 从服务器读取到的数据：", rawData);
 
-      const markersData = (Array.isArray(rawData) ? rawData : []).map(item => ({
-        location: [item.lat, item.lng],
-        size: item.size || 0.05
-      }));
+          const markersData = (Array.isArray(rawData) ? rawData : []).map(item => ({
+            location: [item.lat, item.lng],
+            size: item.size || 0.05
+          }));
 
-      let phi = 0;
-      createGlobe(canvas, {
-        devicePixelRatio: 2,
-        width: 1000, 
-        height: 1000,
-        phi: 0,
-        theta: 0,
-        dark: 0,
-        diffuse: 1.2,
-        mapSamples: 16000,
-        mapBrightness: 6,
-        baseColor: [1, 1, 1],       
-        markerColor: [0.1, 0.5, 1], 
-        glowColor: [1, 1, 1],       
-        markers: markersData, 
-        onRender: (state) => {
-          state.phi = phi;
-          phi += 0.005; 
+          let phi = 0;
+          createGlobe(canvas, {
+            devicePixelRatio: 2,
+            width: 1000, 
+            height: 1000,
+            phi: 0,
+            theta: 0,
+            dark: 0,
+            diffuse: 1.2,
+            mapSamples: 16000,
+            mapBrightness: 6,
+            baseColor: [1, 1, 1],       
+            markerColor: [0.1, 0.5, 1], 
+            glowColor: [1, 1, 1],       
+            markers: markersData, 
+            onRender: (state) => {
+              state.phi = phi;
+              phi += 0.005; 
+            }
+          });
+          
+          console.log("✅ 3D 地球渲染成功！");
+        } catch (e) {
+          console.error("❌ 地球渲染逻辑出错:", e);
         }
+      })
+      .catch(err => {
+        console.error("❌ 无法从 CDN 加载 Cobe 3D 库:", err);
       });
-      
-      console.log("✅ 3D 地球渲染成功！");
-    } catch (e) {
-      console.error("❌ 地球渲染过程中出现错误:", e);
-    }
   }
 
-  // 3. 【核心修复】智能判断执行时机，兼容各种主题的无刷新加载
+  // 兼容直接强刷和导航栏无刷新跳转的两种情况
   if (document.readyState === 'loading') {
-    // 如果页面正在加载（比如直接强制刷新网页），等待加载完成后执行
-    document.addEventListener('DOMContentLoaded', renderGlobe);
+    document.addEventListener('DOMContentLoaded', initGlobe);
   } else {
-    // 如果 DOM 已经准备好（比如从别的页面点击导航栏跳转过来），立刻执行！
-    renderGlobe();
+    // 稍微延迟 50 毫秒，确保 PJAX 已经把 canvas 元素塞进了网页里
+    setTimeout(initGlobe, 50);
   }
 </script>
