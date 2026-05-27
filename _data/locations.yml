@@ -39,3 +39,14 @@
   lng: -77.46435630420702
   size: 0.08
 
+- name: "Medical University of Graz"
+  lat: 47.080450958244256
+  lng: 15.469553994256925
+  size: 0.08
+
+- name: "Southern University of Science and Technology"
+  lat: 22.5333
+  lng: 113.9292
+  size: 0.08
+
+
