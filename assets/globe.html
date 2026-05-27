@@ -2,84 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Globe</title>
   <style>
-    /* 1. 铺满全屏，没有任何多余限制 */
-    body, html { 
-      margin: 0; 
-      padding: 0; 
-      width: 100%; 
-      height: 100%; 
-      overflow: hidden; 
-      background-color: transparent; 
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    /* 2. 容器使用 Flexbox 居中，哪怕外层变形，它也能稳住内部 */
-    .globe-container { 
-      width: 100%; 
-      height: 100%; 
+
+    #container {
+      width: 100%;
+      height: 100%;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
-    /* 3. 画布保持完美比例，object-fit 确保永远是完整的圆 */
-    canvas { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: contain; 
+
+    canvas {
+      display: block;
+      flex-shrink: 0;
     }
-    /* 标签样式不变 */
-    .label {
-      position: absolute; 
-      bottom: 10px; 
-      right: 10px; 
-      font-size: 14px; 
-      color: #666; 
-      font-style: italic; 
-      background-color: rgba(255,255,255,0.8); 
-      padding: 4px 8px; 
-      border-radius: 4px; 
-      font-family: sans-serif; 
-      display: flex; 
-      align-items: center; 
-      gap: 6px;
+
+    #legend {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+      user-select: none;
+      pointer-events: none;
     }
-    .blue-dot {
-      width: 8px; 
-      height: 8px; 
-      border-radius: 50%; 
-      background-color: rgb(26, 128, 255);
+
+    #legend .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgb(26, 128, 255);
+      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
-  <div class="globe-container">
-    <canvas id="cobe-globe" width="1000" height="1000"></canvas>
-    <div class="label"><span class="blue-dot"></span>Our collaborators</div>
+  <div id="container">
+    <canvas id="globe"></canvas>
+    <div id="legend">
+      <span class="dot"></span>
+      <span>Our collaborators</span>
+    </div>
   </div>
 
   <script type="module">
-    import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
+    import createGlobe from 'https://esm.sh/cobe@0.6.5';
+
+    const canvas = document.getElementById('globe');
+    const container = document.getElementById('container');
+
     const markers = [
-      { name: "Shanghai (ION)", lat: 31.2304, lng: 121.4737, size: 0.1 },
-      { name: "Seattle (UW)", lat: 47.6062, lng: -122.3321, size: 0.08 },
-      { name: "SCAU", lat: 23.157, lng: 113.3574, size: 0.05 },
-      { name: "Xiangya Hospital", lat: 28.2117, lng: 112.9836, size: 0.05 },
-      { name: "Westlake University", lat: 30.3183, lng: 120.0811, size: 0.05 },
-      { name: "Peking University", lat: 39.9919, lng: 116.3068, size: 0.05 },
-      { name: "Prince of Wales Hospital", lat: 22.3795, lng: 114.2005, size: 0.08 },
-      { name: "Janelia Research Campus", lat: 39.0720, lng: -77.4643, size: 0.08 },
-      { name: "Medical University of Graz", lat: 47.0804, lng: 15.4695, size: 0.08 },
-      { name: "SUSTech", lat: 22.5333, lng: 113.9292, size: 0.08 },
-      { name: "Xiamen University", lat: 24.4798, lng: 118.0894, size: 0.05 }
+      { location: [31.2304, 121.4737],  size: 0.1  }, // Shanghai (ION)
+      { location: [47.6062, -122.3321], size: 0.08 }, // Seattle (UW)
+      { location: [23.1570, 113.3574], size: 0.05 }, // SCAU
+      { location: [28.2117, 112.9836], size: 0.05 }, // Xiangya Hospital
+      { location: [30.3183, 120.0811], size: 0.05 }, // Westlake University
+      { location: [39.9919, 116.3068], size: 0.05 }, // Peking University
+      { location: [22.3795, 114.2005], size: 0.08 }, // Prince of Wales Hospital
+      { location: [39.0720, -77.4643], size: 0.08 }, // Janelia Research Campus
+      { location: [47.0804, 15.4695],  size: 0.08 }, // Medical University of Graz
+      { location: [22.5333, 113.9292], size: 0.08 }, // SUSTech
+      { location: [24.4798, 118.0894], size: 0.05 }, // Xiamen University
     ];
-    const cobeMarkers = markers.map(item => ({ location: [item.lat, item.lng], size: item.size }));
+
     let phi = 0;
-    createGlobe(document.getElementById("cobe-globe"), {
-      devicePixelRatio: 2.5, width: 1000, height: 1000, phi: 0, theta: 0, dark: 0,
-      diffuse: 1.2, mapSamples: 16000, mapBrightness: 6, baseColor: [1, 1, 1],
-      markerColor: [0.1, 0.5, 1], glowColor: [1, 1, 1], markers: cobeMarkers,
-      onRender: (state) => { state.phi = phi; phi += 0.005; }
-    });
+    let globe;
+
+    const dpr = Math.min(window.devicePixelRatio, 2);
+
+    function createGlobeInstance(width, height) {
+      return createGlobe(canvas, {
+        devicePixelRatio: dpr,
+        width,
+        height,
+        phi: 0,
+        theta: 0.28,
+        dark: 0,
+        diffuse: 1.2,
+        mapSamples: 16000,
+        mapBrightness: 6,
+        baseColor: [1, 1, 1],
+        markerColor: [0.1, 0.5, 1],
+        glowColor: [1, 1, 1],
+        markers,
+        onRender: (state) => {
+          state.phi = phi;
+          phi += 0.005;
+        }
+      });
+    }
+
+    let prevSize = 0;
+
+    function fitCanvas() {
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      const size = Math.min(w, h);
+
+      canvas.style.width  = size + 'px';
+      canvas.style.height = size + 'px';
+
+      if (globe && Math.abs(size - prevSize) / prevSize < 0.3) return;
+
+      const renderSize = Math.floor(size * dpr);
+      if (globe) globe.destroy();
+      globe = createGlobeInstance(renderSize, renderSize);
+      prevSize = size;
+    }
+
+    const ro = new ResizeObserver(fitCanvas);
+    ro.observe(container);
   </script>
 </body>
 </html>
