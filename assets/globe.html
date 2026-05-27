@@ -75,7 +75,7 @@
     const cobeMarkers = markers.map(item => ({ location: [item.lat, item.lng], size: item.size }));
     let phi = 0;
     createGlobe(document.getElementById("cobe-globe"), {
-      devicePixelRatio: 2, width: 1000, height: 1000, phi: 0, theta: 0, dark: 0,
+      devicePixelRatio: 2.5, width: 1000, height: 1000, phi: 0, theta: 0, dark: 0,
       diffuse: 1.2, mapSamples: 16000, mapBrightness: 6, baseColor: [1, 1, 1],
       markerColor: [0.1, 0.5, 1], glowColor: [1, 1, 1], markers: cobeMarkers,
       onRender: (state) => { state.phi = phi; phi += 0.005; }

@@ -237,7 +237,7 @@ author_profile: false
     <a href="#protocols">📋 Protocols</a>
   </nav>
 
-  <iframe src="/assets/globe.html" style="width: 90%; max-width: 600px; aspect-ratio: 1 / 1; display: block; margin: 2rem auto; border: none;" scrolling="no"></iframe>
+  <iframe src="/assets/globe.html" style="width: 100%; max-width: 600px; aspect-ratio: 1 / 1; display: block; margin: 2rem auto; border: none;" scrolling="no"></iframe>
 
 
   <div class="section-spacer"></div>
