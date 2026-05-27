@@ -1,15 +1,30 @@
 # _data/locations.yml
-- name: "Shanghai"
+- name: "Shanghai (ION)"
   lat: 31.2304
   lng: 121.4737
   size: 0.1
 
-- name: "Seattle"
+- name: "Seattle (UW)"
   lat: 47.6062
   lng: -122.3321
   size: 0.08
 
-- name: "London"
-  lat: 51.5074
-  lng: -0.1278
+- name: "SCAU"
+  lat: 23.1570
+  lng: 113.3574
+  size: 0.05
+
+- name: "Xiangya Hospital (湘雅医院)"
+  lat: 28.2117
+  lng: 112.9836
+  size: 0.05
+
+- name: "Westlake University (西湖大学)"
+  lat: 30.3183
+  lng: 120.0811
+  size: 0.05
+
+- name: "Peking University (北京大学)"
+  lat: 39.9919
+  lng: 116.3068
   size: 0.05

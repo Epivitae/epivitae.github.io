@@ -1,9 +1,27 @@
-<div style="width: 100%; max-width: 500px; height: 500px; margin: 2rem auto;">
+<div style="position: relative; width: 100%; max-width: 500px; height: 500px; margin: 2rem auto;">
+  
   <canvas id="cobe-globe" width="1000" height="1000" style="width: 100%; height: 100%;"></canvas>
+  
+  <div style="position: absolute; bottom: 20px; right: 20px; font-size: 0.9em; color: #555; font-style: italic; background-color: rgba(255,255,255,0.7); padding: 4px 8px; border-radius: 4px;">
+    📍 Our collaborators
+  </div>
+
 </div>
 
 <script type="module">
   import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
+
+  // 1. 【核心修改点】直接输出为 JS 对象，去掉引号和 JSON.parse
+  const rawData = {{ site.data.locations | jsonify | default: '[]' }};
+  
+  // 打印出来看看，按 F12 如果能在控制台看到你的坐标数据，就大功告成了
+  //console.log("📍 从后台读取到的地点数据：", rawData);
+  
+  // 2. 转换为 Cobe 需要的格式
+  const markersData = rawData.map(item => ({
+    location: [item.lat, item.lng],
+    size: item.size || 0.05
+  }));
 
   const canvas = document.getElementById("cobe-globe");
   let phi = 0;
@@ -15,18 +33,14 @@
       height: 1000,
       phi: 0,
       theta: 0,
-      dark: 0, // 0是白底，如果你的主页是黑色的，请改成1
+      dark: 0,
       diffuse: 1.2,
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [1, 1, 1],       
-      markerColor: [0.1, 0.5, 1], // 蓝色的点
+      markerColor: [0.1, 0.5, 1], 
       glowColor: [1, 1, 1],       
-      // 3. 直接写死经纬度，排除 Liquid 模板干扰
-      markers: [
-        { location: [31.2304, 121.4737], size: 0.1 }, 
-        { location: [47.6062, -122.3321], size: 0.08 }
-      ],           
+      markers: markersData, // 注入数据
       onRender: (state) => {
         state.phi = phi;
         phi += 0.005; 

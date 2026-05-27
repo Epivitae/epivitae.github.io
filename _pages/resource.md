@@ -237,6 +237,8 @@ author_profile: false
     <a href="#protocols">📋 Protocols</a>
   </nav>
 
+  {% include globe.html %}
+
   <div class="section-spacer"></div>
   <h2 id="plasmids">Expression vector maps for biosensors</h2>
 
@@ -306,7 +308,7 @@ author_profile: false
 More sensors for metabolites are coming...<br><br><br><br>
 
 
-{% include globe.html %}
+
 
 
 
