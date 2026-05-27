@@ -1,0 +1,15 @@
+# _data/locations.yml
+- name: "Shanghai"
+  lat: 31.2304
+  lng: 121.4737
+  size: 0.1
+
+- name: "Seattle"
+  lat: 47.6062
+  lng: -122.3321
+  size: 0.08
+
+- name: "London"
+  lat: 51.5074
+  lng: -0.1278
+  size: 0.05
