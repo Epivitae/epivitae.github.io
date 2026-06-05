@@ -208,7 +208,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/papers/SCaMP/SCaMP1.png" target="_blank">
-                <img src="/images/papers/SCaMP/SCaMP1.png" alt="SCaMP" style="width: 200px;">
+                <img src="/images/papers/SCaMP/SCaMP1.png" alt="SCaMP" style="max-width: 200px; width: auto; height: auto;">
              </a>
           </div>
         </div>
@@ -223,15 +223,15 @@ comments: true
           The team spent an unforgettable weekend hiking and relaxing in the scenic hills.
           Special thanks to everyone for making it so special.
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px;">
+          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
             <a href="/images/news/retreat1.jpg" target="_blank">
-              <img src="/images/news/retreat1.jpg" alt="Spring Retreat" style="width: 200px;">
+              <img src="/images/news/retreat1.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
             </a>
             <a href="/images/news/retreat.jpg" target="_blank">
-              <img src="/images/news/retreat.jpg" alt="Spring Retreat" style="width: 200px;">
+              <img src="/images/news/retreat.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
             </a>
             <a href="/images/news/retreat2.jpg" target="_blank">
-              <img src="/images/news/retreat2.jpg" alt="Spring Retreat" style="width: 200px;">
+              <img src="/images/news/retreat2.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
             </a>
           </div>
         </div>
@@ -246,15 +246,15 @@ comments: true
           <a href="https://mp.weixin.qq.com/s/q4r7DFClAbgz0oaRi9MXkA" target="_blank">Shanghai Normal University Annual Conference</a> 
           for the report on <a href="/resources/#ado-sensor">Adenosine sensor</a> development!
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px;">
+          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
             <a href="/images/news/2026-Jia.jpg" target="_blank">
-              <img src="/images/news/2026-Jia.jpg" alt="Award 1" style="width: 200px;">
+              <img src="/images/news/2026-Jia.jpg" alt="Award 1" style="max-width: 200px; width: auto; height: auto;">
             </a>
             <a href="/images/news/2026-Jia2.jpg" target="_blank">
-              <img src="/images/news/2026-Jia2.jpg" alt="Award 2" style="width: 200px;">
+              <img src="/images/news/2026-Jia2.jpg" alt="Award 2" style="max-width: 200px; width: auto; height: auto;">
             </a>
             <a href="/images/news/2026-Jia2.jpg" target="_blank">
-              <img src="/images/news/2026-Jia3.jpg" alt="Award 2" style="width: 200px;">
+              <img src="/images/news/2026-Jia3.jpg" alt="Award 2" style="max-width: 200px; width: auto; height: auto;">
             </a>
           </div>
         </div>
@@ -282,15 +282,15 @@ comments: true
         <div class="news-body">
           🎉 Congratulations to <a href="/Team/#Yihan">Yihan</a> for winning <strong>First Prize</strong> at the <a href="https://mp.weixin.qq.com/s/Gi1v9bK5biY94kZGdkgSmA"> Undergraduate Research Forum</a> of <a href="https://qwc.shu.edu.cn/" target="_blank">Qian Weichang College</a>!
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px;">
+          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
             <a href="/images/about/yihan3.jpg" target="_blank">
-              <img src="/images/about/yihan3.jpg" alt="Award" style="height: 150px; width: auto;">
+              <img src="/images/about/yihan3.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
             </a>
             <a href="/images/about/yihan2.jpg" target="_blank">
-              <img src="/images/about/yihan2.jpg" alt="Award" style="height: 150px; width: auto;">
+              <img src="/images/about/yihan2.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
             </a>
             <a href="/images/about/yihan1.jpg" target="_blank">
-              <img src="/images/about/yihan1.jpg" alt="Award" style="height: 150px; width: auto;">
+              <img src="/images/about/yihan1.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
             </a>
           </div>
         </div>
@@ -301,12 +301,12 @@ comments: true
         <div class="news-body">
           🎉 Congratulations to <a href="/#about">Kui</a> for receiving the <strong>Excellent <a href="/publication/2025-04-05-Trp-metab-poster">Poster</a> Award</strong> at the <a href="https://www.csbmb.org.cn/2025/eindex.html" target="_blank">2025 CSBMB Annual Symposium</a> in Nanchang.
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px;">
+          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
              <a href="/images/about/poster-award.jpg" target="_blank">
-               <img src="/images/about/poster-award.jpg" alt="Poster Award" style="height: 150px; width: auto;">
+               <img src="/images/about/poster-award.jpg" alt="Poster Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
              </a>
              <a href="/images/about/poster-award2.jpg" target="_blank">
-               <img src="/images/about/poster-award2.jpg" alt="Poster Award" style="height: 150px; width: auto;">
+               <img src="/images/about/poster-award2.jpg" alt="Poster Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
              </a>
           </div>
         </div>
@@ -326,7 +326,7 @@ comments: true
           <br>
           <div class="news-img-box">
             <a href="/images/news/One flower, one universe.gif" target="_blank">
-              <img src="/images/news/One flower, one universe.gif" alt="Microbial Art" style="width: 200px;">
+              <img src="/images/news/One flower, one universe.gif" alt="Microbial Art" style="max-width: 200px; width: auto; height: auto;">
             </a>
           </div>
         </div>
@@ -339,7 +339,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/news/benches.png" target="_blank">
-               <img src="/images/news/benches.png" alt="Lab Benches" style="width: 600px;">
+               <img src="/images/news/benches.png" alt="Lab Benches" style="max-width: 100%; width: auto; height: auto;">
              </a>
           </div>
         </div>
@@ -366,7 +366,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/papers/HaloDA1.0.png" target="_blank">
-                <img src="/images/papers/HaloDA1.0.png" alt="HaloDA Paper" style="width: 180px;">
+                <img src="/images/papers/HaloDA1.0.png" alt="HaloDA Paper" style="max-width: 180px; width: auto; height: auto;">
              </a>
           </div>
         </div>
@@ -379,7 +379,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/papers/BD-dye.png" target="_blank">
-                <img src="/images/papers/BD-dye.png" alt="BD Dye" style="width: 180px;">
+                <img src="/images/papers/BD-dye.png" alt="BD Dye" style="max-width: 180px; width: auto; height: auto;">
              </a>
           </div>
         </div>
@@ -406,7 +406,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/papers/trp.png" target="_blank">
-                <img src="/images/papers/trp.png" alt="BMC Paper" style="width: 180px;">
+                <img src="/images/papers/trp.png" alt="BMC Paper" style="max-width: 180px; width: auto; height: auto;">
              </a>
           </div>
         </div>
@@ -433,7 +433,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/papers/Cell Disc_Logo.jpg" target="_blank">
-                <img src="/images/papers/Cell Disc_Logo.jpg" alt="Cell Discovery" style="width: 180px;">
+                <img src="/images/papers/Cell Disc_Logo.jpg" alt="Cell Discovery" style="max-width: 180px; width: auto; height: auto;">
              </a>
           </div>
         </div>
