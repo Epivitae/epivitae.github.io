@@ -132,6 +132,10 @@ comments: true
     transform: scale(1.02);
   }
 
+  .news-img-box a {
+    display: block;
+  }
+
   .news-img-box img {
     display: block;
     max-width: 100%;
@@ -223,15 +227,15 @@ comments: true
           The team spent an unforgettable weekend hiking and relaxing in the scenic hills.
           Special thanks to everyone for making it so special.
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/news/retreat1.jpg" target="_blank">
-              <img src="/images/news/retreat1.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
+              <img src="/images/news/retreat1.jpg" alt="Spring Retreat">
             </a>
             <a href="/images/news/retreat.jpg" target="_blank">
-              <img src="/images/news/retreat.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
+              <img src="/images/news/retreat.jpg" alt="Spring Retreat">
             </a>
             <a href="/images/news/retreat2.jpg" target="_blank">
-              <img src="/images/news/retreat2.jpg" alt="Spring Retreat" style="max-width: 200px; width: auto; height: auto;">
+              <img src="/images/news/retreat2.jpg" alt="Spring Retreat">
             </a>
           </div>
         </div>
@@ -246,15 +250,15 @@ comments: true
           <a href="https://mp.weixin.qq.com/s/q4r7DFClAbgz0oaRi9MXkA" target="_blank">Shanghai Normal University Annual Conference</a> 
           for the report on <a href="/resources/#ado-sensor">Adenosine sensor</a> development!
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/news/2026-Jia.jpg" target="_blank">
-              <img src="/images/news/2026-Jia.jpg" alt="Award 1" style="max-width: 200px; width: auto; height: auto;">
+              <img src="/images/news/2026-Jia.jpg" alt="Award 1">
             </a>
             <a href="/images/news/2026-Jia2.jpg" target="_blank">
-              <img src="/images/news/2026-Jia2.jpg" alt="Award 2" style="max-width: 200px; width: auto; height: auto;">
+              <img src="/images/news/2026-Jia2.jpg" alt="Award 2">
             </a>
-            <a href="/images/news/2026-Jia2.jpg" target="_blank">
-              <img src="/images/news/2026-Jia3.jpg" alt="Award 2" style="max-width: 200px; width: auto; height: auto;">
+            <a href="/images/news/2026-Jia3.jpg" target="_blank">
+              <img src="/images/news/2026-Jia3.jpg" alt="Award 3">
             </a>
           </div>
         </div>
@@ -282,15 +286,15 @@ comments: true
         <div class="news-body">
           🎉 Congratulations to <a href="/Team/#Yihan">Yihan</a> for winning <strong>First Prize</strong> at the <a href="https://mp.weixin.qq.com/s/Gi1v9bK5biY94kZGdkgSmA"> Undergraduate Research Forum</a> of <a href="https://qwc.shu.edu.cn/" target="_blank">Qian Weichang College</a>!
           <br>
-          <div class="news-img-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/about/yihan3.jpg" target="_blank">
-              <img src="/images/about/yihan3.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
+              <img src="/images/about/yihan3.jpg" alt="Award">
             </a>
             <a href="/images/about/yihan2.jpg" target="_blank">
-              <img src="/images/about/yihan2.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
+              <img src="/images/about/yihan2.jpg" alt="Award">
             </a>
             <a href="/images/about/yihan1.jpg" target="_blank">
-              <img src="/images/about/yihan1.jpg" alt="Award" style="max-height: 150px; height: auto; width: auto; max-width: 100%;">
+              <img src="/images/about/yihan1.jpg" alt="Award">
             </a>
           </div>
         </div>
