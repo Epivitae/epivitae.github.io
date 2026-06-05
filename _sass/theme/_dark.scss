@@ -35,6 +35,17 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
+    /* 侧边栏社交图标适配暗色背景 */
+    .social-icons {
+      .fa-github,
+      .fa-github-alt,
+      .fa-github-square {
+        color: #f0f6fc;       /* GitHub 浅色，暗底可见 */
+      }
+      .fa-weibo {
+        color: #e6162d;       /* 微博红在暗底上略提亮 */
+      }
+    }
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-border-color               : #{$background-light};
