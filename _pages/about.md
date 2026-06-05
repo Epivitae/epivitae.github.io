@@ -143,6 +143,13 @@ comments: true
     border-radius: 2px;
   }
 
+  /* 多图并排：强制等高一排 */
+  .news-img-box.uniform img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+
   /* --- 访客统计样式 --- */
   .footer-counter {
     margin-top: 80px;
@@ -227,7 +234,7 @@ comments: true
           The team spent an unforgettable weekend hiking and relaxing in the scenic hills.
           Special thanks to everyone for making it so special.
           <br>
-          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div class="news-img-box uniform" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/news/retreat1.jpg" target="_blank">
               <img src="/images/news/retreat1.jpg" alt="Spring Retreat">
             </a>
@@ -250,7 +257,7 @@ comments: true
           <a href="https://mp.weixin.qq.com/s/q4r7DFClAbgz0oaRi9MXkA" target="_blank">Shanghai Normal University Annual Conference</a> 
           for the report on <a href="/resources/#ado-sensor">Adenosine sensor</a> development!
           <br>
-          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div class="news-img-box uniform" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/news/2026-Jia.jpg" target="_blank">
               <img src="/images/news/2026-Jia.jpg" alt="Award 1">
             </a>
@@ -286,7 +293,7 @@ comments: true
         <div class="news-body">
           🎉 Congratulations to <a href="/Team/#Yihan">Yihan</a> for winning <strong>First Prize</strong> at the <a href="https://mp.weixin.qq.com/s/Gi1v9bK5biY94kZGdkgSmA"> Undergraduate Research Forum</a> of <a href="https://qwc.shu.edu.cn/" target="_blank">Qian Weichang College</a>!
           <br>
-          <div class="news-img-box" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div class="news-img-box uniform" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
             <a href="/images/about/yihan3.jpg" target="_blank">
               <img src="/images/about/yihan3.jpg" alt="Award">
             </a>
