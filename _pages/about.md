@@ -200,7 +200,7 @@ comments: true
       </p>
 
       <p>
-        We are currently integrating advanced technologies such as <strong>AI-assisted protein design</strong>, <strong>semi-automated high-throughput screening</strong>, <strong>rapid in vivo expression in zebrafish</strong>, and <strong>light-sheet microscopy imaging</strong> to develop next-generation optical imaging tools(e.g., Tryptamine sensor <a href="/publications/">GEM<sub>TrpA</sub>1.0</a>, Red calcium sensor <a href="/publication/2026-05-05-SCaMP">SCaMP</a>, Forchlorfenuron sensor <a href="/publications/">GEM<sub>CPPU</sub>1.0</a>, among others). These efforts aim to address key scientific questions in molecular and cellular neurobiology, neuromodulation of metabolism, and neuro–tumor interactions.
+        We are currently integrating advanced technologies such as <strong>AI-assisted protein design</strong>, <strong>semi-automated high-throughput screening</strong>, <strong>rapid in vivo expression in zebrafish</strong>, and <strong>light-sheet microscopy imaging</strong> to develop next-generation optical imaging tools(e.g., Tryptamine sensor <a href="/publications/">GEM<sub>TrpA</sub>1.0</a>, Forchlorfenuron sensor <a href="/publications/">GEM<sub>CPPU</sub>1.0</a>, among others). These efforts aim to address key scientific questions in molecular and cellular neurobiology, neuromodulation of metabolism, and neuro–tumor interactions.
       </p>
     </div>
   </section>
@@ -211,19 +211,6 @@ comments: true
     
     <div class="news-feed">
 
-
-       <div class="news-item highlight-news">
-        <div class="news-date">May 5, 2026</div>
-        <div class="news-body">
-          ✨✨✨ 📄 New <a href="/publication/2026-05-05-SCaMP">Red calcium sensor SCaMP</a> preprints posted in <strong> Figshare</strong>.
-          <br>
-          <div class="news-img-box">
-             <a href="/images/papers/SCaMP/SCaMP1.png" target="_blank">
-                <img src="/images/papers/SCaMP/SCaMP1.png" alt="SCaMP" style="max-width: 200px; width: auto; height: auto;">
-             </a>
-          </div>
-        </div>
-      </div>
 
 
 
