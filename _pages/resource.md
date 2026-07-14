@@ -286,7 +286,7 @@ author_profile: false
           <td><a href="/files/plasmid/PLACEHOLDER.dna">K6</a></td>
           <td>✨GEM<sub>CPPU</sub>1.0 Sensor</td>
           <td>Ratiometric biosensor for detecting Forchlorfenuron (CPPU)</td>
-          <td>Manuscript in preparation</td>
+          <td>Under revision</td>
         </tr>
         <tr id="trpa-sensor">
           <td><a href="/files/plasmid/PLACEHOLDER.dna">K7</a></td>
