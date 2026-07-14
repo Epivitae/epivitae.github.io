@@ -288,11 +288,11 @@ author_profile: false
           <td>Ratiometric biosensor for detecting Forchlorfenuron (CPPU)</td>
           <td>Manuscript in preparation</td>
         </tr>
-        <tr>
+        <tr id="trpa-sensor">
           <td><a href="/files/plasmid/PLACEHOLDER.dna">K7</a></td>
           <td>✨GEM<sub>TrpA</sub>1.0 Sensor</td>
           <td>Novel sensor for monitoring Tryptamine dynamics <em>in vivo</em></td>
-          <td>Under revision</td>
+          <td><a href="/publication/2026-06-19-TrpA-sleep">Nat Neurosci, 2026</a></td>
         </tr>
         <tr id="ado-sensor" >
           <td><a href="/files/plasmid/PLACEHOLDER.dna">K8</a></td>
