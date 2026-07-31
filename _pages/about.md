@@ -217,8 +217,8 @@ comments: true
           📄 New <a href="/resources/#trpa-sensor">Tryptamine Sensor</a> paper published in <a href="/publication/2026-06-19-TrpA-sleep"><strong>Nature Neuroscience</strong></a>.
           <br>
           <div class="news-img-box">
-             <a href="/images/about/TrpA%20sensor.png" target="_blank">
-                <img src="/images/about/TrpA%20sensor.png" alt="TrpA Sensor" style="max-width: 180px; max-height: 150px; width: auto; height: auto;">
+             <a href="/images/about/TrpA_sensor.png" target="_blank">
+                <img src="/images/about/TrpA_sensor.png" alt="TrpA Sensor" style="max-width: 180px; max-height: 150px; width: auto; height: auto;">
              </a>
           </div>
         </div>
