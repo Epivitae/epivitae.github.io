@@ -214,7 +214,13 @@ comments: true
       <div class="news-item highlight-news">
         <div class="news-date">Jun 19, 2026</div>
         <div class="news-body">
-          📄 New <a href="/publication/2026-06-19-TrpA-sleep">Tryptamine Sensor</a> paper published in <strong>Nature Neuroscience</strong>.
+          📄 New <a href="/resources/#trpa-sensor">Tryptamine Sensor</a> paper published in <a href="/publication/2026-06-19-TrpA-sleep"><strong>Nature Neuroscience</strong></a>.
+          <br>
+          <div class="news-img-box">
+             <a href="/images/about/TrpA sensor.png" target="_blank">
+                <img src="/images/about/TrpA sensor.png" alt="TrpA Sensor" style="max-width: 180px; width: auto; height: auto;">
+             </a>
+          </div>
         </div>
       </div>
 
