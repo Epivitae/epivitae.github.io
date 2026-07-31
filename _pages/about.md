@@ -200,7 +200,7 @@ comments: true
       </p>
 
       <p>
-        We are currently integrating advanced technologies such as <strong>AI-assisted protein design</strong>, <strong>semi-automated high-throughput screening</strong>, <strong>rapid in vivo expression in zebrafish</strong>, and <strong>light-sheet microscopy imaging</strong> to develop next-generation optical imaging tools(e.g., Tryptamine sensor <a href="/resources/#trpa-sensor">GEM<sub>TrpA</sub>1.0</a>, Forchlorfenuron sensor <a href="/publications/">GEM<sub>CPPU</sub>1.0</a>, among others). These efforts aim to address key scientific questions in molecular and cellular neurobiology, neuromodulation of metabolism, and neuro–tumor interactions.
+        We are currently integrating advanced technologies such as <strong>AI-assisted protein design</strong>, <strong>semi-automated high-throughput screening</strong>, <strong>rapid in vivo expression in zebrafish</strong>, and <strong>light-sheet microscopy imaging</strong> to develop next-generation optical imaging tools(e.g., Tryptamine sensor <a href="/resources/#trpa-sensor">GEM<sub>TrpA</sub>1.0</a> (<a href="/publication/2026-06-19-TrpA-sleep">Nature Neuroscience, 2026</a>), Forchlorfenuron sensor <a href="/publications/">GEM<sub>CPPU</sub>1.0</a> (ACS Synthetic Biology, in revision), among others). These efforts aim to address key scientific questions in molecular and cellular neurobiology, neuromodulation of metabolism, and neuro–tumor interactions.
       </p>
     </div>
   </section>
@@ -211,6 +211,12 @@ comments: true
     
     <div class="news-feed">
 
+      <div class="news-item highlight-news">
+        <div class="news-date">Jun 19, 2026</div>
+        <div class="news-body">
+          📄 New <a href="/publication/2026-06-19-TrpA-sleep">Tryptamine Sensor</a> paper published in <strong>Nature Neuroscience</strong>.
+        </div>
+      </div>
 
 
 
