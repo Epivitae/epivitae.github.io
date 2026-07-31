@@ -218,7 +218,7 @@ comments: true
           <br>
           <div class="news-img-box">
              <a href="/images/about/TrpA_sensor.png" target="_blank">
-                <img src="/images/about/TrpA_sensor.png" alt="TrpA Sensor" style="max-width: 180px; max-height: 150px; width: auto; height: auto;">
+                <img src="/images/about/TrpA_sensor.png" alt="TrpA Sensor" style="max-width: 240px; width: auto; height: auto;">
              </a>
           </div>
         </div>
